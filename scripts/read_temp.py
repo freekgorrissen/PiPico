@@ -14,5 +14,5 @@ class TempSensor(object):
         temperature = 27 - (reading - 0.706) / 0.001721
         print(f"{temperature:.2f} C")
 
-    def start_temp_reading(self):
-        self.tim.init(freq=1, mode=Timer.PERIODIC, callback=self.read_u16)
+    def start_temp_reading(self, freq=1):
+        self.tim.init(freq=freq, mode=Timer.PERIODIC, callback=self.read_u16)
